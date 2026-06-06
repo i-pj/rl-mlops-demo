@@ -9,6 +9,7 @@ Subcommands:
     config    Print the current system and model configuration
     record    Record one deterministic evidence video
     mlflow-ui Launch the MLflow UI
+    play      Play the CarRacing environment manually
 """
 
 from __future__ import annotations
@@ -125,6 +126,16 @@ def cmd_demo(args: argparse.Namespace) -> None:
     model = load_model(model_path)
     run_visual_demo(model, model_path, num_episodes=1)
 
+# ── Subcommand: play ─────────────────────────────────────────────
+
+
+def cmd_play(args: argparse.Namespace) -> None:
+    """Run manual play mode."""
+    _print_banner()
+    from rl_mlops_demo.play import run_manual_play
+
+    run_manual_play()
+
 
 def cmd_record(args: argparse.Namespace) -> None:
     """Record one evidence video using a selected package."""
@@ -219,6 +230,10 @@ def main() -> None:
     p_demo = sub.add_parser("demo", help="Run visual demo (pygame window)")
     p_demo.add_argument("--clean", action="store_true", help="Delete old CSVs first")
     p_demo.set_defaults(func=cmd_demo)
+
+    # play
+    p_play = sub.add_parser("play", help="Manually play the CarRacing environment")
+    p_play.set_defaults(func=cmd_play)
 
     # record
     p_record = sub.add_parser("record", help="Record one deterministic evidence video")

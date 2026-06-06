@@ -45,6 +45,9 @@ uv run rl-demo eval -n 5
 # Visually demo the model's behavior
 uv run rl-demo demo
 
+# Play the game manually yourself
+uv run rl-demo play
+
 # Open MLflow to review the logged evidence
 uv run rl-demo mlflow-ui
 ```
