@@ -11,7 +11,7 @@ This repository provides a clean, professional environment for learning how to e
 - Evaluating model candidates using a deterministic, headless pipeline.
 - Visualizing behavior and reviewing evidence for release gates.
 
-## Student Setup
+## Setup
 
 The project uses `uv` for strict dependency management.
 
