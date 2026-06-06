@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+
+# UV
+uv.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project artifacts (generated at runtime)
+models/*.zip
+models/ppo-*
+logs/runs/*.csv
+videos/*.mp4
+videos/*.webm
+mlflow.db
+mlflow.db-*
+mlartifacts/
+mlruns/
+logs/runs/*.config.json
+
+# Keep directory structure and the provided fallback model
+!models/.gitkeep
+!models/provided-fallback/fallback-model.zip
+!logs/runs/.gitkeep
+!videos/.gitkeep
+
+# Streamlit
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/

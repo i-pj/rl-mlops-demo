@@ -1,0 +1,46 @@
+{
+  "algorithm": "PPO",
+  "policy": "CnnPolicy",
+  "n_envs": 8,
+  "seed": 42,
+  "device": "cpu",
+  "hyperparameters": {
+    "algorithm": "PPO",
+    "policy": "CnnPolicy",
+    "n_envs": 8,
+    "n_steps": 512,
+    "batch_size": 128,
+    "learning_rate": "linear_schedule(1e-4)",
+    "use_sde": true,
+    "sde_sample_freq": 4,
+    "activation_fn": "GELU",
+    "ortho_init": false,
+    "frame_stack": 2,
+    "frame_skip": 2,
+    "norm_obs": false,
+    "norm_reward": true,
+    "total_timesteps": 2000000,
+    "seed": 42
+  },
+  "environment": {
+    "env_id": "CarRacing-v3",
+    "frame_skip": 2,
+    "frame_stack": 2,
+    "grayscale": true,
+    "resize": [
+      84,
+      84
+    ],
+    "norm_obs": false,
+    "norm_reward": true
+  },
+  "versions": {
+    "git_commit": "unknown",
+    "sb3_version": "2.8.0",
+    "gym_version": "1.2.3",
+    "torch_version": "2.12.0",
+    "python_version": "3.11.14",
+    "device": "cpu",
+    "platform": "Darwin-arm64"
+  }
+}

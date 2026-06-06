@@ -1,0 +1,49 @@
+[project]
+name = "rl-mlops-demo"
+version = "1.0.0"
+description = "From RL Agent to Production — MLOps Workshop Demo"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "torch>=2.1",
+    "gymnasium[box2d]>=1.0",
+    "stable-baselines3>=2.3",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pygame>=2.5",
+    "rich>=13.7",
+    "opencv-python-headless>=4.8",
+    "mlflow>=3.0",
+    "matplotlib>=3.8",
+    "optuna>=3.0",
+    "swig>=4.1",
+    "psutil>=5.9.0",
+    "sb3-contrib>=2.8.0",
+]
+
+[project.scripts]
+rl-demo = "rl_mlops_demo.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+
+[dependency-groups]
+dev = [
+    "ruff>=0.4",
+    "pytest>=8.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
